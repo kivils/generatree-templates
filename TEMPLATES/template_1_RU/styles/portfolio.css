@@ -1,0 +1,240 @@
+/* Start Campaign Section
+==================================================================
+*/
+
+.campaign {
+  background: #f1f1f1;
+  padding: 30px 0;
+}
+.campaign img{
+  max-width:100%;
+}
+
+.text-center {
+  margin-bottom: 35px;
+}
+
+#portfolio-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+
+  li {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 50%;
+    margin-left: -1px;
+    margin-bottom: -4px;
+    padding: 0;
+    text-align: center;
+    transition: all 0.5s;
+
+
+    @media only screen and (max-width : 550px) {
+      width: 100%;
+    }
+
+    @media only screen
+    and (max-width : 767px)
+    and (min-width : 551px){
+      width: 49.9%;
+    }
+
+    @media (min-width: 768px) {
+      width: 33.21%;
+    }
+
+    h3 {
+      background:#fff;
+      bottom: 0;
+      font-size: 1.4em;
+      font-weight: 300;
+      left: 0;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 20px;
+      position: absolute;
+      text-align: right;
+      text-transform: none;
+      width: 100%;
+      transition: transform 0.2s ease 0s, color 0.2s ease 0s;
+    }
+
+    .header {
+      display: none;
+      margin: 2% 2% 0%;
+      padding: 4% 0;
+      font-size: 18px;
+      line-height: 23px;
+      font-weight: 400;
+      text-transform: none;
+      color:#fff;
+
+      @media (min-width: 992px) {
+        display: block;
+      }
+    }
+
+    .body {
+      display: none;
+      font-size: 1em;
+      color:#fff;
+
+      @media (min-width: 992px) {
+        display: block;
+      }
+    }
+
+    img {width: 100%;
+      transition: all 0.75s;
+    }
+
+    .portfolio-item-content {
+      opacity:0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: #050F1E;
+      transition: all 0.5s;
+    }
+
+    .more {
+      opacity:0;
+      display: inline-block;
+      content: "i";
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 100;
+      line-height: 76px;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -40px;
+      height: 80px;
+      width: 80px;
+      color: #fff;
+      background:#000;
+      border: 2px solid #fff;
+      transition: all 0.5s;
+      transform: scale(0);
+    }
+
+    &:hover {
+      h3 {
+        color: #FFFFFF;
+        transform: translate3d(0px, 70px, 0px);
+        opacity:0;
+      }
+
+      > li:before {
+        border-color: #2E3444;
+        border-width: 14px;
+      }
+
+      .portfolio-item-content {
+        opacity:1;
+      }
+
+      .more {
+        opacity:0.75;
+        top: 50%;
+        margin-top: -40px;
+        transform: scale(1);
+        border-radius:50%;
+
+        @media (min-width: 992px) {
+          top: 60%;
+          margin-top: 0;
+        }
+
+        &:hover {
+          opacity:1;
+          color: #556270;
+          border-color: #fff;
+          background:#fff;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-2column #portfolio-list li {
+    width: 31.0%;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-3column #portfolio-list li {
+    width: 27.9%;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-4column #portfolio-list li {
+    width: 24.8%;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-5column #portfolio-list li {
+    width: 21.7%;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-6column #portfolio-list li {
+    width: 18.6%;
+    padding: 4px;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-8column #portfolio-list li {
+    width: 12.4%;
+  }
+}
+
+@media (min-width: 768px) {
+  .full-width-portfolio #portfolio-list li {
+    width: 24.85%;
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio-2column #portfolio-list li {
+    width: 49.9%;
+  }
+}
+
+/* */
+.full-width-recent-projects .portfolio-item:hover .portfolio-thumb .thumb-overlay {
+  background-color: var(--color-accent-light);
+}
+
+.portfolio-filter {
+  li {
+    a {
+      &:hover {
+        color: var(--color-accent-light);
+      }
+
+      &.selected {
+        border-color: var(--color-accent-light);
+        background-color: var(--color-accent-light);
+      }
+    }
+  }
+}
+
+.portfolio-item:hover .portfolio-details h4 {
+  color: var(--color-accent-light);
+}
+
+#portfolio-list li .portfolio-item-content {
+  background: var(--color-accent-light);
+}
