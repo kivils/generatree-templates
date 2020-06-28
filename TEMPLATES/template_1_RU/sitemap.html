@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>@SITE_NAME@ | Контакты</title>
+  <title>@SITE_NAME@ | Карта сайта</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -70,12 +70,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h2>Контактная информация</h2>
+          <h2>Карта Сайта</h2>
         </div>
         <div class="col-md-6">
           <ul class="breadcrumbs">
             <li><a href="index.html">Главная</a></li>
-            <li>Контакты</li>
+            <li>Карта сайта</li>
           </ul>
         </div>
       </div>
@@ -86,62 +86,21 @@
   <!-- Start Content -->
   <div id="content">
     <div class="container">
-      <div class="row mb2">
-        <div class="col-md-8">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group controls">
-                <p class="fieldValue">@SUBM_NAME@</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              <div class="form-group controls">
-                <label>Город</label>
-                <p class="fieldValue">@CITY@</p>
-              </div>
-            </div>
-            <div class="col-xs-6">
-              <div class="form-group controls">
-                <label>Телефон</label>
-                <p class="fieldValue">@PHONE1@</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              <div class="form-group controls">
-                <label>Email</label>
-                <p class="fieldValue">@EMAIL@</p>
-              </div>
-            </div>
-            <div class="col-xs-6">
-              <div class="form-group controls">
-                <label>Сайт</label>
-                <p class="fieldValue">@WWW@</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div align="center">
-            <img class="imgCover" alt="" src="images/author.jpg">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group controls">
-            <p class="fieldValue">
-              @NOTES@
-            </p>
-            <p class="fieldValue">
-              Привет!<br>
-              По всем вопросам можно обращаться ко мне - вконтакте, через почту, вайбер/вотсап по номеру телефона.
-            </p>
-          </div>
-        </div>
+      <div class="col-md-12">
+        <ul class="siteMap">
+          <li><a href="index.html"><i class="fa fa-check-circle"></i> Главная</a></li>
+          <li @MENU_PERS@><a href="persons.html"><i class="fa fa-check-circle"></i> Персоны</a></li>
+          <li @MENU_FAM@><a href="families.html"><i class="fa fa-check-circle"></i> Семьи</a></li>
+          <li @MENU_EVEN@><a href="events.html"><i class="fa fa-check-circle"></i> События</a></li>
+          <li @MENU_DOC@><a href="docs.html"><i class="fa fa-check-circle"></i> Фотоальбом</a></li>
+          <li @MENU_TREE@><a href="tree/trees.html"><i class="fa fa-check-circle"></i> Полное Дерево</a></li>
+          <li @MENU_INFO@><a href="#"><i class="fa fa-check-circle"></i>Инфо</a>
+            <ul class="siteMap">
+              <li><a href="contact.html"><i class="fa fa-check-circle"></i> Контакты</a></li>
+              <li><a href="stat.html"><i class="fa fa-check-circle"></i> Статистика</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -200,3 +159,4 @@
 </body>
 
 </html>
+
