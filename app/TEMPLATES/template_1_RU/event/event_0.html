@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>@SITE_NAME@ | @TREE_TYPE_NAME@</title>
+  <title>@SITE_NAME@ | Событие</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Семейное дерево. Сайт создан при помощи программы Дерево Поколений">
   <meta name="author" content="Дерево Поколений">
 
+  <!-- build:css ../css/vendors.min.css -->
+
+  <!-- endbuild -->
+  <!-- build:css ../css/styles.min.css -->
   <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+  <!-- endbuild -->
   <link rel="shortcut icon" href="../images/gt_icon.png">
 </head>
 
-<body @TAG_1@>
+<body>
 
 <!-- Container -->
-<div id="container" @TAG_4@>
+<div id="container" class="boxed-page">
   <!-- Start Header -->
   <div class="hidden-header"></div>
   <header class="clearfix">
@@ -28,15 +33,15 @@
             <i class="fa fa-bars"></i>
           </button>
           <!-- End Toggle Nav Link For Mobiles -->
-          <a class="navbar-brand" href="../index.html"><img alt="" src="../images/logo.png"></a>
+          <a class="navbar-brand" href="../index.html">Сесюнины Кивилевы</a>
         </div>
         <div class="navbar-collapse collapse">
           <!-- Start Navigation List -->
           <ul class="nav navbar-nav navbar-right">
-            <li @MENU_MAIN@><a href="../index.html" class="active">Главная</a></li>
+            <li @MENU_MAIN@><a href="../index.html">Главная</a></li>
             <li @MENU_PERS@><a href="../persons.html">Персоны</a></li>
             <li @MENU_FAM@><a href="../families.html">Семьи</a></li>
-            <li @MENU_EVEN@><a href="../events.html">События</a></li>
+            <li @MENU_EVEN@><a href="../events.html" class="active">События</a></li>
             <li @MENU_DOC@><a href="../docs.html">Фотоальбом</a></li>
             <li @MENU_TREE@><a href="../tree/trees.html">Полное Дерево</a></li>
             <li @MENU_INFO@><a href="../stat.html">Статистика</a></li>
@@ -48,10 +53,10 @@
 
       <!-- Mobile Menu Start -->
       <ul class="wpb-mobile-menu">
-        <li @MENU_MAIN@><a href="../index.html" class="active">Главная</a></li>
+        <li @MENU_MAIN@><a href="../index.html">Главная</a></li>
         <li @MENU_PERS@><a href="../persons.html">Персоны</a></li>
         <li @MENU_FAM@><a href="../families.html">Семьи</a></li>
-        <li @MENU_EVEN@><a href="../events.html">События</a></li>
+        <li @MENU_EVEN@><a href="../events.html" class="active">События</a></li>
         <li @MENU_DOC@><a href="../docs.html">Фотоальбом</a></li>
         <li @MENU_TREE@><a href="../tree/trees.html">Полное Дерево</a></li>
         <li @MENU_INFO@><a href="../stat.html">Статистика</a></li>
@@ -70,14 +75,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h2>@TREE_TYPE_NAME@</h2>
-          <p>@PERS_NAME@</p>
+          <h2>@EVEN_NAME@</h2> <!--Рождение - Иванов Сергей Иванович-->
+          <p>Карточка события</p>
         </div>
         <div class="col-md-6">
           <ul class="breadcrumbs">
             <li><a href="../index.html">Главная</a></li>
-            <li @MENU_PERS@><a href="../persons.html">Персоны</a></li>
-            <li>@TREE_TYPE_NAME@</li>
+            <li @MENU_EVEN@><a href="../events.html">События</a></li>
+            <li>Карточка события</li>
           </ul>
         </div>
       </div>
@@ -86,17 +91,84 @@
   <!-- End Page Banner -->
 
   <!-- Start Content -->
-  <div id="content" @TAG_2@>
-    @TAG_5@
-    <div class="div-svg">
-      @SVG_DATA@
+  <div id="content">
+    <div class="container">
+      <div class="page-content">
+
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Classic Heading -->
+            <h4 class="classic-title">Общие данные</h4>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group controls">
+              <label>Тип</label>
+              <p class="fieldValue">@EVEN_TYPE_NAME@</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group controls">
+              <label>Дата</label>
+              <p class="fieldValue">@EVEN_DATE@</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group controls">
+              <label>Место</label>
+              <p class="fieldValue">@EVEN_PLACE@</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="classic-title">Описание</h4>
+            <div class="form-group controls">
+              <p class="fieldValue">@NOTES@</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hr5"/>
+
+        <!-- Start Recent Posts Carousel -->
+        <div class="latest-posts @VISIBLE_SEC_MEMBER@">
+          <h4 class="classic-title">Участники</h4>
+          <div class="row">
+            <div class="col-md-12">
+              <table id="event_member" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                <tr>
+                  <th>Роль</th>
+                  <th>ФИО персоны</th>
+                </tr>
+                </thead>
+                <tbody>
+                @MEMBER_LIST@
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- End Recent Posts Carousel -->
+
+        <hr class="hr5"/>
+
+        <!-- Начало раздела Документы -->
+        <div class="recent-projects @VISIBLE_SEC_DOC@">
+          <h4 class="classic-title">Документы</h4>
+          <div class="projects-carousel touch-carousel">
+            @DOC_LIST@
+          </div>
+        </div>
+        <!-- Конец раздела Документы -->
+
+      </div>
     </div>
-    @TAG_6@
   </div>
   <!-- End Content -->
 
   <!-- Start Footer -->
-  <footer @TAG_3@ class="@FOOTER_SHOW@">
+  <footer class="@FOOTER_SHOW@">
     <div class="container">
       <!-- Start Copyright -->
       <div class="copyright-section">
@@ -117,6 +189,7 @@
 <!-- Go To Top Link -->
 <a href="#" class="back-to-top" title="Наверх"><i class="fa fa-angle-up"></i></a>
 
+<!-- build:js ../js/vendors.min.js -->
 <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="../js/jquery.migrate.js"></script>
 
@@ -140,10 +213,16 @@
 
 <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="../asset/js/bootstrap-treeview.min.js"></script>
+<!-- endbuild -->
 
-<script type="text/javascript" src="../js/tree.init.js"></script>
+<!-- build:js ../js/scripts.min.js -->
 <script type="text/javascript" src="../js/table.init.js"></script>
 <script type="text/javascript" src="../js/script.js"></script>
+<!-- endbuild -->
+
+<!-- build:js ../js/tree.init.js -->
+<script type="text/javascript" src="../js/tree.init.js"></script>
+<!-- endbuild -->
 
 </body>
 

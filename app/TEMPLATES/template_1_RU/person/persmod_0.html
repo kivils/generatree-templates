@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>@SITE_NAME@ | Персона</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Семейное дерево. Сайт создан при помощи программы Дерево Поколений">
+	<meta name="author" content="Дерево Поколений">
+
+	<!-- build:css ../css/vendors.min.css -->
+
+	<!-- endbuild -->
+	<!-- build:css ../css/styles.min.css -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+	<!-- endbuild -->
+	<link rel="shortcut icon" href="../images/gt_icon.png">
+</head>
+
+<body>
+
+<!-- Container -->
+<div id="container" class="boxed-page">
+	<!-- Start Header -->
+	<div class="hidden-header"></div>
+	<header class="clearfix">
+		<!-- Start Header ( Logo & Naviagtion ) -->
+		<div class="navbar navbar-default navbar-top">
+			<div class="container">
+				<div class="navbar-header">
+					<!-- Start Toggle Nav Link For Mobiles -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<i class="fa fa-bars"></i>
+					</button>
+					<!-- End Toggle Nav Link For Mobiles -->
+					<a class="navbar-brand" href="../index.html">Сесюнины Кивилевы</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<!-- Start Navigation List -->
+					<ul class="nav navbar-nav navbar-right">
+						<li @MENU_MAIN@><a href="../index.html">Главная</a></li>
+						<li @MENU_PERS@><a href="../persons.html" class="active">Персоны</a></li>
+						<li @MENU_FAM@><a href="../families.html">Семьи</a></li>
+						<li @MENU_EVEN@><a href="../events.html">События</a></li>
+						<li @MENU_DOC@><a href="../docs.html">Фотоальбом</a></li>
+						<li @MENU_TREE@><a href="../tree/trees.html">Полное Дерево</a></li>
+						<li @MENU_INFO@><a href="../stat.html">Статистика</a></li>
+						<li @MENU_INFO@><a href="../contact.html">Контакты</a></li>
+					</ul>
+					<!-- End Navigation List -->
+				</div>
+			</div>
+
+			<!-- Mobile Menu Start -->
+			<ul class="wpb-mobile-menu">
+				<li @MENU_MAIN@><a href="../index.html">Главная</a></li>
+				<li @MENU_PERS@><a href="../persons.html" class="active">Персоны</a></li>
+				<li @MENU_FAM@><a href="../families.html">Семьи</a></li>
+				<li @MENU_EVEN@><a href="../events.html">События</a></li>
+				<li @MENU_DOC@><a href="../docs.html">Фотоальбом</a></li>
+				<li @MENU_TREE@><a href="../tree/trees.html">Полное Дерево</a></li>
+				<li @MENU_INFO@><a href="../stat.html">Статистика</a></li>
+				<li @MENU_INFO@><a href="../contact.html">Контакты</a></li>
+			</ul>
+			<!-- Mobile Menu End -->
+
+		</div>
+		<!-- End Header ( Logo & Naviagtion ) -->
+
+	</header>
+	<!-- End Header -->
+
+	<!-- Start Page Banner -->
+	<div class="page-banner no-subtitle">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h2>@DISPLAY_NAME@</h2> <!--Иванов Сергей Иванович-->
+					<p>Карточка персоны</p>
+				</div>
+				<div class="col-md-6">
+					<ul class="breadcrumbs">
+						<li><a href="../index.html">Главная</a></li>
+						<li @MENU_PERS@><a href="../persons.html">Персоны</a></li>
+						<li>Карточка персоны</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Page Banner -->
+
+	<!-- Start Content -->
+	<div id="content">
+		<div class="container">
+			<div class="page-content">
+
+				<div class="row">
+					<div class="col-md-4">
+						<!-- Classic Heading -->
+						<h4 class="classic-title"><span>Фотография</span></h4>
+
+						<!-- Start Foto Slider -->
+						<div align="center">
+							<div class="touch-slider" data-slider-navigation="@SLIDER_FLAG_1@"
+									 data-slider-pagination="@SLIDER_FLAG_1@" data-slider-progress-bar="@SLIDER_FLAG_2@"
+									 style="width: 210px;">
+								@PERS_FOTO_LIST@
+							</div>
+						</div>
+						<!-- End Foto Slider -->
+					</div>
+
+					<div class="col-md-8">
+						<!-- Classic Heading -->
+						<h4 class="classic-title"><span>Общие данные</span></h4>
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group controls">
+									<label>Фамилия</label>
+									<p class="fieldValue">@LAST_NAME@</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group controls">
+									<label>Имя</label>
+									<p class="fieldValue">@FIRST_NAME@</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group controls">
+									<label>Отчество</label>
+									<p class="fieldValue">@MIDDLE_NAME@</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group controls">
+									<label>Фамилия при рождении</label>
+									<p class="fieldValue">@BIRTH_NAME@</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group controls">
+									<label>Дата рождения</label>
+									<p class="fieldValue">@BIRTH_DATE@</p>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="form-group controls">
+									<label>Место рождения</label>
+									<p class="fieldValue">@BIRTH_PLACE@</p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="controls flex">
+								<label>В живых</label>
+								<div class="material-switch">
+									<input id="is_life" name="is_life" type="checkbox" @IS_LIFE@ disabled/>
+									<label for="is_life" class="label-warning"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group controls @VISIBLE_DEAD_SEC@">
+									<label>Дата смерти</label>
+									<p class="fieldValue">@DEATH_DATE@</p>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="form-group controls @VISIBLE_DEAD_SEC@">
+									<label>Место смерти</label>
+									<p class="fieldValue">@DEATH_PLACE@</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Разделитель -->
+				<hr class="hr5"/>
+
+				<!-- Разделы -->
+				<div class="panel-group">
+					<!-- Начало раздела "Родственные связи" -->
+					<div class="panel panel-default @VISIBLE_SEC_FAM@">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse-1">
+									<i class="fa fa-angle-up control-icon"></i>
+									<i class="fa fa-venus-mars"></i> Родственные связи
+								</a>
+							</h4>
+						</div>
+						<div id="collapse-1" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<!-- Начало родственных связей -->
+								<div class="row vdivide">
+									<div class="col-md-6 col-vd">
+										<div class="row hor-shift">
+											<div class="form-group controls">
+												<label>Отец:</label>
+												@FATHER_BUTTON@
+											</div>
+										</div>
+										<div class="row hor-shift">
+											<div class="form-group controls">
+												<label>Мать:</label>
+												@MOTHER_BUTTON@
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-vd">
+										@SPOUSES_LIST@
+									</div>
+								</div>
+								<!-- Конец раздела "Родственные связи" -->
+							</div>
+						</div>
+					</div>
+					<!-- Конец раздела "Родственные связи" -->
+
+					<!-- Начало раздела "Свойства персоны" -->
+					<div class="panel panel-default @VISIBLE_SEC_FACT@">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse-2" class="collapsed">
+									<i class="fa fa-angle-down control-icon"></i>
+									<i class="fa fa-cog"></i> Свойства персоны
+								</a>
+							</h4>
+						</div>
+						<div id="collapse-2" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-12">
+										<table id="facts" class="table table-striped table-bordered" style="width:100%">
+											<thead>
+											<tr>
+												<th>Свойство</th>
+												<th>Значение</th>
+												<th>Дата</th>
+												<th>Место</th>
+												<th>Категория</th>
+											</tr>
+											</thead>
+											<tbody>
+											@PERS_FACT_LIST@
+											</tbody>
+											<tfoot>
+											<tr>
+												<th>Свойство</th>
+												<th>Значение</th>
+												<th>Дата</th>
+												<th>Место</th>
+												<th>Категория</th>
+											</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Конец раздела "Родственные связи" -->
+
+					<!-- Начало раздела "Описание" -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse-3" class="collapsed">
+									<i class="fa fa-angle-down control-icon"></i>
+									<i class="fa fa-file-text-o"></i> Описание персоны
+								</a>
+							</h4>
+						</div>
+						<div id="collapse-3" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p class="fieldValue">
+									@PERS_NOTES@
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- Конец раздела "Описание" -->
+
+				</div>
+				<!-- End Toggle -->
+
+				<!-- Начало раздела События -->
+				<div class="panel-group @VISIBLE_SEC_EVEN@">
+					<h4 class="classic-title"><span>События</span></h4>
+					<div class="row">
+						<div class="col-md-12">
+							<table id="pers_event" class="table table-striped table-bordered" style="width:100%">
+								<thead>
+								<tr>
+									<th>Тип события</th>
+									<th>Дата</th>
+									<th>Место</th>
+									<th>Уровень конф-ти</th>
+								</tr>
+								</thead>
+								<tbody>
+								@PERS_EVEN_LIST@
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- Конец раздела События -->
+
+				<!-- Начало раздела Документы -->
+				<div class="recent-projects @VISIBLE_SEC_DOC@">
+					<h4 class="classic-title"><span>Документы</span></h4>
+					<div class="projects-carousel touch-carousel">
+						@PERS_DOC_LIST@
+					</div>
+				</div>
+				<!-- Конец раздела Документы -->
+
+			</div>
+		</div>
+	</div>
+	<!-- End Content -->
+
+	<!-- Start Footer -->
+	<footer class="@FOOTER_SHOW@">
+		<div class="container">
+			<!-- Start Copyright -->
+			<div class="copyright-section">
+				<div class="row">
+					<div class="col-xs-12">
+						<p>Сайт создан с помощью программы <a href="https://generatree.com/ru">«Дерево Поколений»</a></p>
+					</div>
+				</div>
+			</div>
+			<!-- End Copyright -->
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+</div>
+<!-- End Container -->
+
+<!-- Go To Top Link -->
+<a href="#" class="back-to-top" title="Наверх"><i class="fa fa-angle-up"></i></a>
+
+<!-- build:js ../js/vendors.min.js -->
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/jquery.migrate.js"></script>
+
+<script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../asset/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="../asset/js/dataTables.colReorder.min.js"></script>
+<script type="text/javascript" src="../asset/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="../asset/js/responsive.bootstrap.min.js"></script>
+<script type="text/javascript" src="../asset/js/dataTables.select.min.js"></script>
+<script type="text/javascript" src="../asset/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="../asset/js/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="../asset/js/dataTables.rowGroup.min.js"></script>
+
+<script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="../js/nivo-lightbox.min.js"></script>
+<script type="text/javascript" src="../js/jquery.appear.js"></script>
+<script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../js/jquery.slicknav.js"></script>
+
+<script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="../asset/js/bootstrap-treeview.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js ../js/scripts.min.js -->
+<script type="text/javascript" src="../js/table.init.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
+<!-- endbuild -->
+
+<!-- build:js ../js/tree.init.js -->
+<script type="text/javascript" src="../js/tree.init.js"></script>
+<!-- endbuild -->
+
+</body>
+
+</html>
+

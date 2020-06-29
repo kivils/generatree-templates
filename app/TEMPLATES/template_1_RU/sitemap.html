@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>@SITE_NAME@ | События</title>
+  <title>@SITE_NAME@ | Карта сайта</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Семейное дерево. Сайт создан при помощи программы Дерево Поколений">
   <meta name="author" content="Дерево Поколений">
 
+  <!-- build:css css/vendors.min.css -->
+
+  <!-- endbuild -->
+  <!-- build:css css/styles.min.css -->
   <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+  <!-- endbuild -->
   <link rel="shortcut icon" href="images/gt_icon.png">
 </head>
 
@@ -28,7 +33,7 @@
             <i class="fa fa-bars"></i>
           </button>
           <!-- End Toggle Nav Link For Mobiles -->
-          <a class="navbar-brand" href="index.html"><img alt="" src="images/logo.png"></a>
+          <a class="navbar-brand" href="index.html">Сесюнины Кивилевы</a>
         </div>
         <div class="navbar-collapse collapse">
           <!-- Start Navigation List -->
@@ -36,11 +41,11 @@
             <li @MENU_MAIN@><a href="index.html">Главная</a></li>
             <li @MENU_PERS@><a href="persons.html">Персоны</a></li>
             <li @MENU_FAM@><a href="families.html">Семьи</a></li>
-            <li @MENU_EVEN@><a href="events.html" class="active">События</a></li>
+            <li @MENU_EVEN@><a href="events.html">События</a></li>
             <li @MENU_DOC@><a href="docs.html">Фотоальбом</a></li>
             <li @MENU_TREE@><a href="tree/trees.html">Полное Дерево</a></li>
             <li @MENU_INFO@><a href="stat.html">Статистика</a></li>
-            <li @MENU_INFO@><a href="contact.html">Контакты</a></li>
+            <li @MENU_INFO@><a href="contact.html" class="active">Контакты</a></li>
           </ul>
           <!-- End Navigation List -->
         </div>
@@ -51,11 +56,11 @@
         <li @MENU_MAIN@><a href="index.html">Главная</a></li>
         <li @MENU_PERS@><a href="persons.html">Персоны</a></li>
         <li @MENU_FAM@><a href="families.html">Семьи</a></li>
-        <li @MENU_EVEN@><a href="events.html" class="active">События</a></li>
+        <li @MENU_EVEN@><a href="events.html">События</a></li>
         <li @MENU_DOC@><a href="docs.html">Фотоальбом</a></li>
         <li @MENU_TREE@><a href="tree/trees.html">Полное Дерево</a></li>
         <li @MENU_INFO@><a href="stat.html">Статистика</a></li>
-        <li @MENU_INFO@><a href="contact.html">Контакты</a></li>
+        <li @MENU_INFO@><a href="contact.html" class="active">Контакты</a></li>
       </ul>
       <!-- Mobile Menu End -->
 
@@ -70,13 +75,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h2>События</h2>
-          <p>Список событий персон</p>
+          <h2>Карта Сайта</h2>
         </div>
         <div class="col-md-6">
           <ul class="breadcrumbs">
             <li><a href="index.html">Главная</a></li>
-            <li>События</li>
+            <li>Карта сайта</li>
           </ul>
         </div>
       </div>
@@ -87,36 +91,21 @@
   <!-- Start Content -->
   <div id="content">
     <div class="container">
-      <div class="page-content">
-        <div>
-          <table id="events" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-            <tr>
-              <th>Id</th>
-              <th>Тип события</th>
-              <th>Участник</th>
-              <th>Дата</th>
-              <th>Место</th>
-              <th>Уровень конфид-ти</th>
-              <th>Описание</th>
-            </tr>
-            </thead>
-            <tbody>
-            @EVEN_LIST@
-            </tbody>
-            <tfoot>
-            <tr>
-              <th>Id</th>
-              <th>Тип события</th>
-              <th>Участник</th>
-              <th>Дата</th>
-              <th>Место</th>
-              <th>Достоверность</th>
-              <th>Описание</th>
-            </tr>
-            </tfoot>
-          </table>
-        </div>
+      <div class="col-md-12">
+        <ul class="siteMap">
+          <li><a href="index.html"><i class="fa fa-check-circle"></i> Главная</a></li>
+          <li @MENU_PERS@><a href="persons.html"><i class="fa fa-check-circle"></i> Персоны</a></li>
+          <li @MENU_FAM@><a href="families.html"><i class="fa fa-check-circle"></i> Семьи</a></li>
+          <li @MENU_EVEN@><a href="events.html"><i class="fa fa-check-circle"></i> События</a></li>
+          <li @MENU_DOC@><a href="docs.html"><i class="fa fa-check-circle"></i> Фотоальбом</a></li>
+          <li @MENU_TREE@><a href="tree/trees.html"><i class="fa fa-check-circle"></i> Полное Дерево</a></li>
+          <li @MENU_INFO@><a href="#"><i class="fa fa-check-circle"></i>Инфо</a>
+            <ul class="siteMap">
+              <li><a href="contact.html"><i class="fa fa-check-circle"></i> Контакты</a></li>
+              <li><a href="stat.html"><i class="fa fa-check-circle"></i> Статистика</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -144,6 +133,7 @@
 <!-- Go To Top Link -->
 <a href="#" class="back-to-top" title="Наверх"><i class="fa fa-angle-up"></i></a>
 
+<!-- build:js js/vendors.min.js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/jquery.migrate.js"></script>
 
@@ -167,10 +157,16 @@
 
 <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="asset/js/bootstrap-treeview.min.js"></script>
+<!-- endbuild -->
 
-<script type="text/javascript" src="js/tree.init.js"></script>
+<!-- build:js js/scripts.min.js -->
 <script type="text/javascript" src="js/table.init.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<!-- endbuild -->
+
+<!-- build:js js/tree.init.js -->
+<script type="text/javascript" src="js/tree.init.js"></script>
+<!-- endbuild -->
 
 </body>
 

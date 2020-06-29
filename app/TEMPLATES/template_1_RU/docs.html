@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>@SITE_NAME@ | Главная</title>
+  <title>@SITE_NAME@ | Документы</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Семейное дерево. Сайт создан при помощи программы Дерево Поколений">
   <meta name="author" content="Дерево Поколений">
 
+  <!-- build:css css/vendors.min.css -->
+
+  <!-- endbuild -->
+  <!-- build:css css/styles.min.css -->
   <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+  <!-- endbuild -->
   <link rel="shortcut icon" href="images/gt_icon.png">
 </head>
 
 <body>
-<!-- Full Body Container -->
+
+<!-- Container -->
 <div id="container" class="boxed-page">
   <!-- Start Header -->
   <div class="hidden-header"></div>
@@ -27,16 +33,16 @@
             <i class="fa fa-bars"></i>
           </button>
           <!-- End Toggle Nav Link For Mobiles -->
-          <a class="navbar-brand" href="index.html"><img alt="" src="images/logo.png"></a>
+          <a class="navbar-brand" href="index.html">Сесюнины Кивилевы</a>
         </div>
         <div class="navbar-collapse collapse">
           <!-- Start Navigation List -->
           <ul class="nav navbar-nav navbar-right">
-            <li @MENU_MAIN@><a href="index.html" class="active">Главная</a></li>
+            <li @MENU_MAIN@><a href="index.html">Главная</a></li>
             <li @MENU_PERS@><a href="persons.html">Персоны</a></li>
             <li @MENU_FAM@><a href="families.html">Семьи</a></li>
             <li @MENU_EVEN@><a href="events.html">События</a></li>
-            <li @MENU_DOC@><a href="docs.html">Фотоальбом</a></li>
+            <li @MENU_DOC@><a href="docs.html" class="active">Фотоальбом</a></li>
             <li @MENU_TREE@><a href="tree/trees.html">Полное Дерево</a></li>
             <li @MENU_INFO@><a href="stat.html">Статистика</a></li>
             <li @MENU_INFO@><a href="contact.html">Контакты</a></li>
@@ -47,11 +53,11 @@
 
       <!-- Mobile Menu Start -->
       <ul class="wpb-mobile-menu">
-        <li @MENU_MAIN@><a href="index.html" class="active">Главная</a></li>
-        <li @MENU_PER@><a href="persons.html">Персоны</a></li>
+        <li @MENU_MAIN@><a href="index.html">Главная</a></li>
+        <li @MENU_PERS@><a href="persons.html">Персоны</a></li>
         <li @MENU_FAM@><a href="families.html">Семьи</a></li>
         <li @MENU_EVEN@><a href="events.html">События</a></li>
-        <li @MENU_DOC@><a href="docs.html">Фотоальбом</a></li>
+        <li @MENU_DOC@><a href="docs.html" class="active">Фотоальбом</a></li>
         <li @MENU_TREE@><a href="tree/trees.html">Полное Дерево</a></li>
         <li @MENU_INFO@><a href="stat.html">Статистика</a></li>
         <li @MENU_INFO@><a href="contact.html">Контакты</a></li>
@@ -64,112 +70,61 @@
   </header>
   <!-- End Header -->
 
-  <!-- Start Services Section -->
-  <div class="section service">
+  <!-- Start Page Banner -->
+  <div class="page-banner">
     <div class="container">
-
-      <div class="row @MAIN_SEC_1@">
-        <div class="col-md-12">
-          <p>@CUSTOM_MAIN_TEXT@</p>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Фотоальбом</h2>
+          <p>Список фотографий</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="breadcrumbs">
+            <li><a href="index.html">Главная</a></li>
+            <li>Фотоальбом</li>
+          </ul>
         </div>
       </div>
-
-      <div class="row @MAIN_SEC_2@">
-
-        <!-- Start Service Icon 1 -->
-        <div class="col-md-4 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="01">
-          <a href="persons.html">
-            <div class="service-icon">
-              <i class="fa fa-venus-mars icon-large"></i>
-            </div>
-          </a>
-          <div class="service-content">
-            <h4>Персоны</h4>
-            <p>Список всех персон, которые хранятся в базе данных</p>
-          </div>
-        </div>
-        <!-- End Service Icon 1 -->
-
-        <!-- Start Service Icon 2 -->
-        <div class="col-md-4 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="02">
-          <a href="families.html">
-            <div class="service-icon">
-              <i class="fa fa-users icon-large"></i>
-            </div>
-          </a>
-          <div class="service-content">
-            <h4>Семьи</h4>
-            <p>Список всех семей, которые хранятся в базе данных</p>
-          </div>
-        </div>
-        <!-- End Service Icon 2 -->
-
-        <!-- Start Service Icon 3 -->
-        <div class="col-md-4 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="03">
-          <a href="events.html">
-            <div class="service-icon">
-              <i class="fa fa-calendar icon-large"></i>
-            </div>
-          </a>
-          <div class="service-content">
-            <h4>События</h4>
-            <p>Список всех событий в жизни персоны, которые хранятся в базе данных</p>
-          </div>
-        </div>
-        <!-- End Service Icon 3 -->
-
-        <!-- Start Service Icon 4 -->
-        <div class="col-md-4 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="04">
-          <a href="docs.html">
-            <div class="service-icon">
-              <i class="fa fa-folder icon-large"></i>
-            </div>
-          </a>
-          <div class="service-content">
-            <h4>Документы</h4>
-            <p>Просмотр фотоальбома проекта</p>
-          </div>
-        </div>
-        <!-- End Service Icon 4 -->
-
-        <!-- Start Service Icon 5 -->
-        <div class="col-md-4 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="05">
-          <a href="stat.html">
-            <div class="service-icon">
-              <i class="fa fa-bar-chart icon-large"></i>
-            </div>
-          </a>
-          <div class="service-content">
-            <h4>Статистика</h4>
-            <p>Статистика по проекту</p>
-          </div>
-        </div>
-        <!-- End Service Icon 5 -->
-
-        <!-- Start Service Icon 6 -->
-        <div class="col-md-4 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="06">
-          <a href="contact.html">
-            <div class="service-icon">
-              <i class="fa fa-address-card icon-large"></i>
-            </div>
-          </a>
-          <div class="service-content">
-            <h4>Контакты</h4>
-            <p>Контактная информация об авторе проекта</p>
-          </div>
-        </div>
-        <!-- End Service Icon 6 -->
-
-      </div>
-      <!-- .row -->
     </div>
-    <!-- .container -->
   </div>
-  <!-- End Services Section -->
+  <!-- End Page Banner -->
 
-  <!-- Start Footer Section -->
+  <!-- Start Content -->
+  <div id="content">
+    <div class="container">
+      <div class="row sidebar-page">
+        <!-- Page Content -->
+        <div class="col-md-9 page-content">
+          <div class=" portfolio-page @COL_COUNT@"> <!--portfolio-6column-->
+            <ul id="portfolio-list" data-animated="fadeIn">
+              @DOC_LIST@
+            </ul>
+            <!-- End Portfolio Items -->
+          </div>
+        </div>
+        <!-- End Page Content -->
+
+        <!--Sidebar-->
+        <div class="col-md-3 sidebar right-sidebar">
+          <!-- Categories Widget -->
+          <div class="widget widget-categories">
+            <h4>Альбомы <span class="head-line"></span></h4>
+            <div id="tree"></div>
+
+            <div id="selectable-output"></div>
+          </div>
+        </div>
+        <!--End Sidebar-->
+      </div>
+    </div>
+  </div>
+  <!-- End Content -->
+
+
+  <!-- Start Footer -->
   <footer class="@FOOTER_SHOW@">
     <div class="container">
+
       <!-- Start Copyright -->
       <div class="copyright-section">
         <div class="row">
@@ -177,20 +132,21 @@
             <p>Сайт создан с помощью программы <a href="https://generatree.com/ru">«Дерево Поколений»</a></p>
           </div>
         </div>
-        <!-- .row -->
       </div>
       <!-- End Copyright -->
 
     </div>
   </footer>
-  <!-- End Footer Section -->
+  <!-- End Footer -->
 
 </div>
-<!-- End Full Body Container -->
+<!-- End Container -->
 
 <!-- Go To Top Link -->
 <a href="#" class="back-to-top" title="Наверх"><i class="fa fa-angle-up"></i></a>
 
+
+<!-- build:js js/vendors.min.js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/jquery.migrate.js"></script>
 
@@ -214,10 +170,16 @@
 
 <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="asset/js/bootstrap-treeview.min.js"></script>
+<!-- endbuild -->
 
-<script type="text/javascript" src="js/tree.init.js"></script>
+<!-- build:js js/scripts.min.js -->
 <script type="text/javascript" src="js/table.init.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<!-- endbuild -->
+
+<!-- build:js js/tree.init.js -->
+<script type="text/javascript" src="js/tree.init.js"></script>
+<!-- endbuild -->
 
 </body>
 
