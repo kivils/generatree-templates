@@ -1,6 +1,6 @@
 {
   "name": "generatree-templates",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Template for Generation Tree",
   "main": "index.js",
   "repository": "https://github.com/kivils/generatree-templates.git",
@@ -50,5 +50,8 @@
   "scripts": {
     "dev": "./node_modules/.bin/gulp serve",
     "build": "npm version patch --no-git-tag-version && ./node_modules/.bin/gulp build"
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
   }
 }

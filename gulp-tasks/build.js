@@ -23,12 +23,14 @@ function pages(cb) {
   const pagesFilter = $.filter('**/*.html', { restore: true });
 
   gulp.src(gulpParams.pagesWild)
+    .pipe($.inject(gulpParams.injectJs, {relative: true}))
+
     .pipe($.useref())
 
     // js
-    .pipe(jsFilter)
-    .pipe($.uglify({preserveComments: '@license'}))
-    .pipe(jsFilter.restore)
+    // .pipe(jsFilter)
+    // .pipe($.uglify({preserveComments: '@license'}))
+    // .pipe(jsFilter.restore)
 
     // css
     .pipe(cssFilter)

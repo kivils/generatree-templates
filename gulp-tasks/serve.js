@@ -23,14 +23,23 @@ function styles(cb) {
   cb();
 }
 
+function injectVendors(cb) {
+  gulp.src(gulpParams.pagesWild)
+    .pipe($.inject(gulpParams.injectJs, {relative: true}))
+
+    .pipe(gulp.dest('./' + gulpParams.sourcePath));
+
+  cb();
+}
+
 function serve(cb) {
   browserSync({ // Sync and reload browsers
     notify: true,
     // proxy: { // Start proxy-server
-    //   target: gulpParams.hostnameTest + gulpParams.sourcePath
+    //   target: gulpParams.hostnameTest + './' + gulpParams.sourcePath
     // },
     server: {
-      baseDir: gulpParams.sourcePath
+      baseDir: './' + gulpParams.sourcePath
     }
   });
 
@@ -39,4 +48,4 @@ function serve(cb) {
   cb();
 }
 
-gulp.task('serve', gulp.series(serve));
+gulp.task('serve', gulp.series(injectVendors, serve));
