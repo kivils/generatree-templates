@@ -44,7 +44,24 @@ let GulpParams = (function () {
         this.fontsBuild = this.buildPath + '/fonts';
 
         /**
-        * Js vendors to inject
+        * CSS vendors to inject
+        */
+        this.injectCss = gulp.src([
+            './' + this.sourcePath + '/asset/css/bootstrap.min.css',
+            './' + this.sourcePath + '/asset/css/dataTables.bootstrap.min.css',
+            './' + this.sourcePath + '/asset/css/colReorder.bootstrap.min.css',
+            './' + this.sourcePath + '/asset/css/responsive.bootstrap.min.css',
+            './' + this.sourcePath + '/asset/css/select.dataTables.min.css',
+            './' + this.sourcePath + '/asset/css/buttons.dataTables.min.css',
+            './' + this.sourcePath + '/asset/css/rowGroup.dataTables.min.css',
+            './' + this.sourcePath + '/asset/css/bootstrap-treeview.min.css',
+            './' + this.sourcePath + '/styles/font-awesome.min.css',
+          ],
+          {read: false}
+        );
+
+        /**
+        * JS vendors to inject
         */
         this.injectJs = gulp.src([
             './' + this.sourcePath + '/js/jquery-2.1.4.min.js',
@@ -61,8 +78,8 @@ let GulpParams = (function () {
             './' + this.sourcePath + '/asset/js/dataTables.rowGroup.min.js',
             './' + this.sourcePath + '/js/owl.carousel.min.js',
             './' + this.sourcePath + '/js/nivo-lightbox.min.js',
-            './' + this.sourcePath + '/js/jquery.appear.js',
-            './' + this.sourcePath + '/js/jquery.nicescroll.min.js',
+            // './' + this.sourcePath + '/js/jquery.appear.js',
+            // './' + this.sourcePath + '/js/jquery.nicescroll.min.js',
             './' + this.sourcePath + '/js/jquery.slicknav.js',
             './' + this.sourcePath + '/js/jquery.isotope.min.js',
             './' + this.sourcePath + '/asset/js/bootstrap-treeview.min.js'

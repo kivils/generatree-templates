@@ -23,6 +23,7 @@ function pages(cb) {
   const pagesFilter = $.filter('**/*.html', { restore: true });
 
   gulp.src(gulpParams.pagesWild)
+    .pipe($.inject(gulpParams.injectCss, {relative: true}))
     .pipe($.inject(gulpParams.injectJs, {relative: true}))
 
     .pipe($.useref())

@@ -5,19 +5,19 @@
 @import "css-variables.scss";
 
 /* Bootstrap CSS */
-@import "../asset/css/bootstrap.min.css";
+/* @import "../asset/css/bootstrap.min.css"; */
 /* DataTables Bootstrap CSS */
-@import "../asset/css/dataTables.bootstrap.min.css";
-@import "../asset/css/colReorder.bootstrap.min.css";
-@import "../asset/css/responsive.bootstrap.min.css";
-@import "../asset/css/select.dataTables.min.css";
-@import "../asset/css/buttons.dataTables.min.css";
-@import "../asset/css/rowGroup.dataTables.min.css";
+/* @import "../asset/css/dataTables.bootstrap.min.css"; */
+/* @import "../asset/css/colReorder.bootstrap.min.css"; */
+/* @import "../asset/css/responsive.bootstrap.min.css"; */
+/* @import "../asset/css/select.dataTables.min.css"; */
+/* @import "../asset/css/buttons.dataTables.min.css"; */
+/* @import "../asset/css/rowGroup.dataTables.min.css"; */
 /* Bootstrap treeview CSS */
-@import "../asset/css/bootstrap-treeview.min.css";
+/* @import "../asset/css/bootstrap-treeview.min.css"; */
 /* Other CSS */
-@import "mat-switch.css";
-@import "./font-awesome.min.css";
+@import "./mat-switch.css";
+/* @import "./font-awesome.min.css"; */
 @import "./slicknav.css";
 @import "./animate.css";
 @import "./owl-carousel.css";
