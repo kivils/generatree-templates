@@ -12,6 +12,8 @@ const $ = gulpLoadPlugins();
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 
+const source = require('vinyl-source-stream');
+
 function styles(cb) {
   gulp.src([gulpParams.styleSourcePath + '/style.css'])
     .pipe($.plumber()) // Fix streams
@@ -33,6 +35,25 @@ function injectVendors(cb) {
   cb();
 }
 
+function bundle() {
+  gulpParams.b
+    .transform('babelify')
+    .bundle()
+    .on('error', $.util.log.bind($.util, 'Browserify Error'))
+    .pipe(source('scripts.js'))
+    .pipe(gulp.dest('./' + gulpParams.jsSourcePath))
+    .pipe(reload({stream: true})) // Reload browsers
+  ;
+}
+
+function scripts(cb) {
+  bundle();
+  gulpParams.b.on('update', bundle);
+  gulpParams.b.on('log', $.util.log);
+
+  cb();
+}
+
 function serve(cb) {
   browserSync({ // Sync and reload browsers
     notify: true,
@@ -44,7 +65,10 @@ function serve(cb) {
     }
   });
 
+  gulp.watch(gulpParams.pagesWild).on('change', reload); // Reload browsers
+
   gulp.watch(gulpParams.cssWild, { ignoreInitial: false }, styles);
+  gulp.watch(gulpParams.scriptsWild, { ignoreInitial: false }, scripts);
 
   cb();
 }

@@ -20,7 +20,9 @@ let GulpParams = (function () {
         this.cssWild = this.styleSourcePath + '/**/*.css';
         this.cssSourcePath = this.sourcePath + '/css';
 
-        this.scriptsSourcePath = this.sourcePath + '/js';
+        this.scriptsSourcePath = this.sourcePath + '/scripts';
+        this.scriptsWild = this.scriptsSourcePath + '/**/*.js';
+        this.jsSourcePath = this.sourcePath + '/js';
 
         this.pagesWild = [
             this.sourcePath + '/**/*.html'
@@ -93,7 +95,7 @@ let GulpParams = (function () {
          */
         this.browserifyOpts = {
             entries: [
-                this.scriptsSourcePath + '/script.js'
+                this.scriptsSourcePath + '/main.js'
             ],
             debug: true
         };
@@ -103,7 +105,7 @@ let GulpParams = (function () {
          * @type {{entries: *[], debug: boolean}}
          */
         this.browserifyOptsBuild = {
-            entries: [this.scriptsSourcePath + '/script.js'],
+            entries: [this.scriptsSourcePath + '/main.js'],
             debug: true
         };
 

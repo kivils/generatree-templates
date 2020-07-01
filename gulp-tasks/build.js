@@ -11,8 +11,22 @@ const injectVersion = require('gulp-inject-version');
 const del = require('del');
 const $ = gulpLoadPlugins();
 
+const source = require('vinyl-source-stream');
+
 function cleanupDist(cb) {
   del('dist/**/*.*');
+
+  cb();
+}
+
+function scripts(cb) {
+  gulpParams.br
+    .transform('babelify')
+    .bundle() // browserify w/o watching
+    .on('error', $.util.log.bind($.util, 'Browserify Error'))
+    .pipe(source('scripts.js'))
+    .pipe(gulp.dest(gulpParams.jsSourcePath)) // Put into js source folder
+  ;
 
   cb();
 }
@@ -70,4 +84,4 @@ function copyFiles(cb) {
   cb();
 }
 
-gulp.task('build', gulp.series(cleanupDist,  gulp.series(pages, copyFiles)));
+gulp.task('build', gulp.series(cleanupDist, scripts,  gulp.series(pages, copyFiles)));
