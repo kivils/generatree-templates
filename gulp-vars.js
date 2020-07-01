@@ -66,9 +66,9 @@ let GulpParams = (function () {
         * JS vendors to inject
         */
         this.injectJs = gulp.src([
-            './' + this.sourcePath + '/js/jquery-2.1.4.min.js',
-            './' + this.sourcePath + '/js/jquery.migrate.js',
-            './' + this.sourcePath + '/asset/js/bootstrap.min.js',
+            './' + this.sourcePath + '/js/jquery-3.5.1.min.js',
+            // './' + this.sourcePath + '/js/jquery.migrate.js',
+            './' + this.sourcePath + '/asset/js/bootstrap.3.4.1.min.js',
             './' + this.sourcePath + '/js/jquery.dataTables.min.js',
             './' + this.sourcePath + '/asset/js/dataTables.bootstrap.min.js',
             './' + this.sourcePath + '/asset/js/dataTables.colReorder.min.js',
@@ -78,13 +78,13 @@ let GulpParams = (function () {
             './' + this.sourcePath + '/asset/js/dataTables.buttons.min.js',
             './' + this.sourcePath + '/asset/js/buttons.colVis.min.js',
             './' + this.sourcePath + '/asset/js/dataTables.rowGroup.min.js',
-            './' + this.sourcePath + '/js/owl.carousel.min.js',
-            './' + this.sourcePath + '/js/nivo-lightbox.min.js',
+            // './' + this.sourcePath + '/js/owl.carousel.min.js',
+            // './' + this.sourcePath + '/js/nivo-lightbox.min.js',
             // './' + this.sourcePath + '/js/jquery.appear.js',
             // './' + this.sourcePath + '/js/jquery.nicescroll.min.js',
-            './' + this.sourcePath + '/js/jquery.slicknav.js',
-            './' + this.sourcePath + '/js/jquery.isotope.min.js',
-            './' + this.sourcePath + '/asset/js/bootstrap-treeview.min.js'
+            // './' + this.sourcePath + '/js/jquery.slicknav.js',
+            // './' + this.sourcePath + '/js/jquery.isotope.min.js',
+            // './' + this.sourcePath + '/asset/js/bootstrap-treeview.min.js'
           ],
           {read: false}
         );

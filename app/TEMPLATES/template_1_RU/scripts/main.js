@@ -95,7 +95,7 @@ function initTableChildren() {
 
 function allScripts() {
   initIsJS();
-  initNavMobile();
+  // initNavMobile();
   initScrollToTop();
   initTablePersons();
   initTableFamilies();

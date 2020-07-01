@@ -6,7 +6,7 @@ function NavMobile() {
     self.init = function() {
       const $ = require('jquery');
 
-      $('.wpb-mobile-menu').slicknav({
+      $('.navbar-nav').slicknav({
         prependTo: '.navbar-header',
         parentTag: 'margo',
         allowParentLinks: true,
