@@ -25,14 +25,14 @@ function scripts(cb) {
     .bundle() // browserify w/o watching
     .on('error', $.util.log.bind($.util, 'Browserify Error'))
     .pipe(source('scripts.js'))
-    .pipe(gulp.dest(gulpParams.jsSourcePath)) // Put into js source folder
+    .pipe(gulp.dest(gulpParams.jsSourcePath))
   ;
 
   cb();
 }
 
 function pages(cb) {
-  const jsFilter = $.filter(['**/*.js', '!**/tree.init.js'], { restore: true }); // tree.init.js contains @ symbol: throws error when minifying
+  const jsFilter = $.filter('**/*.js', { restore: true });
   const cssFilter = $.filter('**/*.css', { restore: true });
   const pagesFilter = $.filter('**/*.html', { restore: true });
 
@@ -40,12 +40,12 @@ function pages(cb) {
     .pipe($.inject(gulpParams.injectCss, {relative: true}))
     .pipe($.inject(gulpParams.injectJs, {relative: true}))
 
-    .pipe($.useref())
+    .pipe($.useref({base: gulpParams.buildPath}))
 
     // js
-    // .pipe(jsFilter)
-    // .pipe($.uglify({preserveComments: '@license'}))
-    // .pipe(jsFilter.restore)
+    .pipe(jsFilter)
+    .pipe($.uglify({preserveComments: '@license'}))
+    .pipe(jsFilter.restore)
 
     // css
     .pipe(cssFilter)
@@ -66,22 +66,27 @@ function pages(cb) {
     }))
     .pipe(pagesFilter.restore)
 
-    .pipe(gulp.dest(gulpParams.buildPath)); // Put files into build folder
+    .pipe(gulp.dest(gulpParams.buildPath));
 
   cb();
 }
 
 function copyFiles(cb) {
+  gulp.src(gulpParams.jsSourcePath + '/*.init.js')
+    .pipe(gulp.dest(gulpParams.jsBuild));
+
+
   gulp.src(gulpParams.imagesWild)
-    .pipe(gulp.dest(gulpParams.imagesBuild)); // Put files into build folder
+    .pipe(gulp.dest(gulpParams.imagesBuild));
 
   gulp.src(gulpParams.fontsAssests)
-    .pipe(gulp.dest(gulpParams.fontsBuild)); // Put files into build folder
+    .pipe(gulp.dest(gulpParams.fontsBuild));
 
   gulp.src(gulpParams.fontsWild)
-    .pipe(gulp.dest(gulpParams.fontsBuild)); // Put files into build folder
+    .pipe(gulp.dest(gulpParams.fontsBuild));
 
   cb();
 }
 
-gulp.task('build', gulp.series(cleanupDist, scripts,  gulp.series(pages, copyFiles)));
+gulp.task('clean', cleanupDist);
+gulp.task('build', gulp.series(scripts, gulp.series(pages, copyFiles)));

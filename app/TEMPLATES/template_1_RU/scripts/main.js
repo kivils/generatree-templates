@@ -3,27 +3,6 @@
 const $ = require('jquery');
 
 /**
- * Check if JS is enabled in browser
- * @see module:isJs
- */
-function initIsJS() {
-  const IsJS = require('./_isJS');
-  const isJSFunc = new IsJS();
-
-  isJSFunc.init();
-}
-
-/**
- * NavMobile
- */
-function initNavMobile() {
-  const NavMobile = require('./_navMobile');
-  const isNavMobileFunc = new NavMobile();
-
-  isNavMobileFunc.init();
-}
-
-/**
  * ScrollToTop
  */
 function initScrollToTop() {
@@ -93,9 +72,37 @@ function initTableChildren() {
   isTableChildrenFunc.init();
 }
 
+/**
+ * Carousels
+ */
+function initCarousels() {
+  const Carousels = require('./_carousels');
+  const isCarouselsFunc = new Carousels();
+
+  isCarouselsFunc.init();
+}
+
+/**
+ * Lightboxes
+ */
+// function initLightboxes() {
+//   const Lightboxes = require('./_lightboxes');
+//   const isLightboxesFunc = new Lightboxes();
+//
+//   isLightboxesFunc.init();
+// }
+
+/**
+ * Photoalbums / File tree
+ */
+// function initPhotoalbums() {
+//   const Photoalbums = require('./_photoalbums');
+//   const isPhotoalbumsFunc = new Photoalbums();
+//
+//   isPhotoalbumsFunc.init();
+// }
+
 function allScripts() {
-  initIsJS();
-  // initNavMobile();
   initScrollToTop();
   initTablePersons();
   initTableFamilies();
@@ -103,6 +110,9 @@ function allScripts() {
   initTableFacts();
   initTableEventsPers();
   initTableChildren();
+  initCarousels();
+  // initLightboxes();
+  // initPhotoalbums();
 }
 
 allScripts();
