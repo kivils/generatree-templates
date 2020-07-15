@@ -11,10 +11,12 @@ let GulpParams = (function () {
     function GulpParams() {
         this.hostnameTest = 'http://generatree-templates';
 
+        this.GTtemplateName = 'template_simple_RU';
+
         /**
          * Source
          */
-        this.sourcePath = 'app/TEMPLATES/template_simple_RU';
+        this.sourcePath = 'app/TEMPLATES/' + this.GTtemplateName;
 
         this.styleSourcePath = this.sourcePath + '/styles';
         this.cssWild = this.styleSourcePath + '/**/*.css';
@@ -40,7 +42,7 @@ let GulpParams = (function () {
         /**
          * Dist
          */
-        this.buildPath = 'dist/TEMPLATES/template_simple_RU';
+        this.buildPath = 'dist/TEMPLATES/' + this.GTtemplateName;
 
         this.imagesBuild = this.buildPath + '/images';
         this.fontsBuild = this.buildPath + '/fonts';
@@ -122,8 +124,13 @@ let GulpParams = (function () {
           */
         this.br = browserify(this.browserifyOptsBuild);
 
+      /**
+       * Zip folder
+       */
+      this.zipPath = 'build'
+
     }
-    return GulpParams;
+  return GulpParams;
 })();
 
 module.exports = GulpParams;

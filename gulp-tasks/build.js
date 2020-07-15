@@ -88,5 +88,14 @@ function copyFiles(cb) {
   cb();
 }
 
+function compressTemplate(cb) {
+  gulp.src(gulpParams.buildPath + '/**/*.*')
+    .pipe($.zip(gulpParams.GTtemplateName + '.zip'))
+    .pipe(gulp.dest(gulpParams.zipPath));
+
+  cb();
+}
+
 gulp.task('clean', cleanupDist);
 gulp.task('build', gulp.series(scripts, gulp.series(pages, copyFiles)));
+gulp.task('zip', compressTemplate);
