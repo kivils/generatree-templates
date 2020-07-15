@@ -14,7 +14,7 @@ let GulpParams = (function () {
         /**
          * Source
          */
-        this.sourcePath = 'app/TEMPLATES/template_1_RU';
+        this.sourcePath = 'app/TEMPLATES/template_simple_RU';
 
         this.styleSourcePath = this.sourcePath + '/styles';
         this.cssWild = this.styleSourcePath + '/**/*.css';
@@ -40,7 +40,7 @@ let GulpParams = (function () {
         /**
          * Dist
          */
-        this.buildPath = 'dist/TEMPLATES/template_1_RU';
+        this.buildPath = 'dist/TEMPLATES/template_simple_RU';
 
         this.imagesBuild = this.buildPath + '/images';
         this.fontsBuild = this.buildPath + '/fonts';

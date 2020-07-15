@@ -14,7 +14,7 @@ const $ = gulpLoadPlugins();
 const source = require('vinyl-source-stream');
 
 function cleanupDist(cb) {
-  del('dist/**/*.*');
+  del('dist/');
 
   cb();
 }
