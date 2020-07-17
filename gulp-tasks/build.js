@@ -36,6 +36,11 @@ function pages(cb) {
   const cssFilter = $.filter('**/*.css', { restore: true });
   const pagesFilter = $.filter('**/*.html', { restore: true });
 
+  gulpParams.injectCss
+    .pipe(gulp.dest(gulpParams.sourcePath + '/css'));
+  gulpParams.injectJs
+    .pipe(gulp.dest(gulpParams.sourcePath + '/js'));
+
   gulp.src(gulpParams.pagesWild)
     .pipe($.inject(gulpParams.injectCss, {relative: true}))
     .pipe($.inject(gulpParams.injectJs, {relative: true}))
@@ -73,14 +78,11 @@ function pages(cb) {
 
 function copyFiles(cb) {
   gulp.src(gulpParams.jsSourcePath + '/*.init.js')
-    .pipe(gulp.dest(gulpParams.jsBuild));
+    .pipe(gulp.dest(gulpParams.jsBuild)); // Required for Generatree
 
 
   gulp.src(gulpParams.imagesWild)
     .pipe(gulp.dest(gulpParams.imagesBuild));
-
-  gulp.src(gulpParams.fontsAssests)
-    .pipe(gulp.dest(gulpParams.fontsBuild));
 
   gulp.src(gulpParams.fontsWild)
     .pipe(gulp.dest(gulpParams.fontsBuild));

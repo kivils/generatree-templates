@@ -26,6 +26,11 @@ function styles(cb) {
 }
 
 function injectVendors(cb) {
+  gulpParams.injectCss
+    .pipe(gulp.dest(gulpParams.sourcePath + '/css'));
+  gulpParams.injectJs
+    .pipe(gulp.dest(gulpParams.sourcePath + '/js'));
+
   gulp.src(gulpParams.pagesWild)
     .pipe($.inject(gulpParams.injectCss, {relative: true}))
     .pipe($.inject(gulpParams.injectJs, {relative: true}))

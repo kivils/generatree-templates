@@ -53,45 +53,43 @@ let GulpParams = (function () {
         * CSS vendors to inject
         */
         this.injectCss = gulp.src([
-            './' + this.sourcePath + '/asset/css/bootstrap.min.css',
-            './' + this.sourcePath + '/asset/css/dataTables.bootstrap.min.css',
-            './' + this.sourcePath + '/asset/css/colReorder.bootstrap.min.css',
-            './' + this.sourcePath + '/asset/css/responsive.bootstrap.min.css',
-            './' + this.sourcePath + '/asset/css/select.dataTables.min.css',
-            './' + this.sourcePath + '/asset/css/buttons.dataTables.min.css',
-            './' + this.sourcePath + '/asset/css/rowGroup.dataTables.min.css',
+            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css',
+            'node_modules/datatables.net-colreorder-bs/css/colReorder.bootstrap.min.css',
+            'node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.min.css',
+            'node_modules/datatables.net-select-bs/css/select.bootstrap.min.css',
+            'node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.min.css',
+            'node_modules/datatables.net-rowgroup-bs/css/rowGroup.bootstrap.min.css',
+            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+            'node_modules/font-awesome/css/font-awesome.min.css',
             './' + this.sourcePath + '/asset/css/bootstrap-treeview.min.css',
-            './' + this.sourcePath + '/asset/css/font-awesome.min.css',
-          ],
-          {read: false}
+          ]
         );
 
         /**
         * JS vendors to inject
         */
         this.injectJs = gulp.src([
-            // './' + this.sourcePath + '/asset/js/jquery-3.5.1.min.js',
-            './' + this.sourcePath + '/js/jquery-2.1.4.min.js',
-            // './' + this.sourcePath + '/js/jquery.migrate.js',
-            './' + this.sourcePath + '/asset/js/bootstrap.3.4.1.min.js',
-            './' + this.sourcePath + '/asset/js/jquery.dataTables.min.js',
-            './' + this.sourcePath + '/asset/js/dataTables.bootstrap.min.js',
-            './' + this.sourcePath + '/asset/js/dataTables.colReorder.min.js',
-            './' + this.sourcePath + '/asset/js/dataTables.responsive.min.js',
-            './' + this.sourcePath + '/asset/js/responsive.bootstrap.min.js',
-            './' + this.sourcePath + '/asset/js/dataTables.select.min.js',
-            './' + this.sourcePath + '/asset/js/dataTables.buttons.min.js',
-            './' + this.sourcePath + '/asset/js/buttons.colVis.min.js',
-            './' + this.sourcePath + '/asset/js/dataTables.rowGroup.min.js',
-            './' + this.sourcePath + '/js/owl.carousel.min.js',
-            // './' + this.sourcePath + '/js/nivo-lightbox.min.js', // Doesn't work with jquery3
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/datatables.net/js/jquery.dataTables.js',
+            'node_modules/datatables.net-bs/js/dataTables.bootstrap.min.js',
+            'node_modules/datatables.net-colreorder/js/dataTables.colReorder.min.js',
+            'node_modules/datatables.net-colreorder-bs/js/colReorder.bootstrap.min.js',
+            'node_modules/datatables.net-responsive/js/dataTables.responsive.min.js',
+            'node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.min.js',
+            'node_modules/datatables.net-select/js/dataTables.select.min.js',
+            'node_modules/datatables.net-select-bs/js/select.bootstrap.min.js',
+            'node_modules/datatables.net-buttons/js/dataTables.buttons.min.js',
+            'node_modules/datatables.net-buttons/js/buttons.colVis.min.js',
+            'node_modules/datatables.net-rowgroup/js/dataTables.rowGroup.min.js',
+            'node_modules/datatables.net-rowgroup-bs/js/rowGroup.bootstrap.min.js',
+            'node_modules/owl.carousel/dist/owl.carousel.min.js',
+            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+            './' + this.sourcePath + '/asset/js/bootstrap-treeview.min.js',
             // './' + this.sourcePath + '/js/jquery.appear.js',
-            // './' + this.sourcePath + '/js/jquery.nicescroll.min.js',
-            // './' + this.sourcePath + '/js/jquery.slicknav.js',
             // './' + this.sourcePath + '/js/jquery.isotope.min.js',
-            './' + this.sourcePath + '/asset/js/bootstrap-treeview.min.js'
-          ],
-          {read: false}
+          ]
         );
 
         /**

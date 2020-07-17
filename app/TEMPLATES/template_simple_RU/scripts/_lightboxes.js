@@ -6,10 +6,8 @@ function Lightboxes() {
     self.init = function() {
       const $ = require('jquery');
 
-      $('.lightbox').nivoLightbox({
-        effect: 'fadeScale',
-        keyboardNav: true,
-        errorMessage: 'The requested content cannot be loaded. Please try again later.'
+      $('.lightbox').fancybox({
+        //
       });
     };
 }

@@ -85,15 +85,16 @@ function initCarousels() {
 /**
  * Lightboxes
  */
-// function initLightboxes() {
-//   const Lightboxes = require('./_lightboxes');
-//   const isLightboxesFunc = new Lightboxes();
-//
-//   isLightboxesFunc.init();
-// }
+function initLightboxes() {
+  const Lightboxes = require('./_lightboxes');
+  const isLightboxesFunc = new Lightboxes();
+
+  isLightboxesFunc.init();
+}
 
 /**
  * Photoalbums / File tree
+ * Won't work because of @..@ placeholders for Generatree
  */
 // function initPhotoalbums() {
 //   const Photoalbums = require('./_photoalbums');
@@ -111,7 +112,7 @@ function allScripts() {
   initTableEventsPers();
   initTableChildren();
   initCarousels();
-  // initLightboxes();
+  initLightboxes();
   // initPhotoalbums();
 }
 
