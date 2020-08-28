@@ -49,7 +49,7 @@ function pages(cb) {
 
     // js
     .pipe(jsFilter)
-    .pipe($.uglify({preserveComments: '@license'}))
+    .pipe($.terser({format: {comments: '@license'}}))
     .pipe(jsFilter.restore)
 
     // css
