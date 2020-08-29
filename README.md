@@ -78,3 +78,7 @@ yarn run build
 - Generates zipped template for "Generation Tree" application
 - Bumps version in package.json
 - Bumps version of assets in generated templates (to avoid assets caching issues in browser)
+
+
+## Issues in template
+- Gallery function for fancybox (**data-lightbox-gallery** must be replaced with **data-fancybox**)
