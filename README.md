@@ -12,6 +12,24 @@ Templates for [Generation Tree](http://generatree.com/index.html)
 - postcss for styling
 - babel for javascript
 
+
+## Gulp tasks for development
+``
+yarn run serve
+``
+
+- Starts local server with hot-reload
+- Active template is set in **gulp-vars.js** via **GTtemplateName** variable
+
+``
+yarn run build
+``
+- Generates dist/ folder with build files
+- Generates zipped template for "Generation Tree" application
+- Bumps version in package.json
+- Bumps version of assets in generated templates (to avoid assets caching issues in browser)
+
+
 ## Templates
 - **template_1_EN** - default template for EN
 - **template_1_RU** - default template for RU
@@ -63,22 +81,5 @@ Templates for [Generation Tree](http://generatree.com/index.html)
 - **fonts/** - fonts for the template
 
 
-## Gulp tasks
-``
-yarn run serve
-``
-
-- Starts local server with hot-reload
-- Active template is set in **gulp-vars.js** via **GTtemplateName** variable
-
-``
-yarn run build
-``
-- Generates dist/ folder with build files
-- Generates zipped template for "Generation Tree" application
-- Bumps version in package.json
-- Bumps version of assets in generated templates (to avoid assets caching issues in browser)
-
-
 ## Issues in template
-- Gallery function for fancybox (**data-lightbox-gallery** must be replaced with **data-fancybox**)
+- Gallery function for [fancybox](https://fancyapps.com/fancybox/3/) in person's pages and in docs.html (**data-lightbox-gallery** must be replaced with **data-fancybox**)
