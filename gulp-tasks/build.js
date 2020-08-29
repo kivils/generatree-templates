@@ -19,6 +19,16 @@ function cleanupDist(cb) {
   cb();
 }
 
+function styles(cb) {
+  gulp.src([gulpParams.styleSourcePath + '/style.css'])
+    .pipe($.plumber()) // Fix streams
+    .pipe( $.postcss([ require('precss'), require('autoprefixer') ]) )
+    .pipe(gulp.dest(gulpParams.cssSourcePath))
+  ;
+
+  cb();
+}
+
 function scripts(cb) {
   gulpParams.br
     .transform('babelify')
@@ -99,5 +109,5 @@ function compressTemplate(cb) {
 }
 
 gulp.task('clean', cleanupDist);
-gulp.task('build', gulp.series(scripts, gulp.series(pages, copyFiles)));
+gulp.task('build', gulp.series(gulp.series(styles, scripts), gulp.series(pages, copyFiles)));
 gulp.task('zip', compressTemplate);
