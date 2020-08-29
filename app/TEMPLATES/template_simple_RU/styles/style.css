@@ -20,7 +20,6 @@
 /* @import "./font-awesome.min.css"; */
 @import "./slicknav.css";
 @import "./animate.css";
-@import "./owl-carousel.css";
 @import "./nivo-lightbox.css";
 @import "./portfolio.css";
 
@@ -219,6 +218,11 @@ label {
     margin-bottom: 5px;
     border: 0;
   }
+}
+
+.contact-image {
+  max-width: 200px;
+  margin-left: auto;
 }
 
 .imgCover {
@@ -576,9 +580,22 @@ div.dataTables_wrapper {
 table.dataTable {
   tbody {
     > tr {
+      &:hover {
+        background-color: var(--color-gray-lightest);
+      }
+
       &.selected,
       > .selected {
-        background-color: #eee;
+        background-color: var(--color-accent-lighter);
+        color: inherit;
+
+        &:hover {
+          background-color: var(--color-accent-lighter);
+        }
+
+        a {
+          color: var(--color-accent);
+        }
       }
     }
   }

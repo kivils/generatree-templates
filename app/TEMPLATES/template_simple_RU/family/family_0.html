@@ -37,7 +37,7 @@
   <!-- build:css ../css/styles.min.css -->
   <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
   <!-- endbuild -->
-  <link rel="shortcut icon" href="../images/gt_icon.png">
+  <link rel="shortcut icon" href="../images/favicons/gt_icon.png">
 </head>
 
 <body>
@@ -157,7 +157,7 @@
               <div class="controls flex">
                 <label>В живых</label>
                 <div class="material-switch">
-                  <input id="is_life_m" name="is_life_m" type="checkbox" @H_IS_LIFE@ disabled/>
+                  <input id="is_life_m" name="is_life_m" type="checkbox" checked="@H_IS_LIFE@" disabled/>
                   <label for="is_life_m" class="label-warning"></label>
                 </div>
               </div>
@@ -227,7 +227,7 @@
               <div class="controls flex">
                 <label>В живых</label>
                 <div class="material-switch">
-                  <input id="is_life_f" name="is_life_f" type="checkbox" @W_IS_LIFE@ disabled/>
+                  <input id="is_life_f" name="is_life_f" type="checkbox" checked="@W_IS_LIFE@" disabled/>
                   <label for="is_life_f" class="label-warning"></label>
                 </div>
               </div>
@@ -335,7 +335,7 @@
         <!-- Начало раздела Документы -->
         <div class="recent-projects @VISIBLE_SEC_DOC@">
           <h4 class="classic-title">Документы</h4>
-          <div class="projects-carousel touch-carousel">
+          <div class="projects-carousel touch-carousel owl-carousel">
             @DOC_LIST@
           </div>
         </div>
