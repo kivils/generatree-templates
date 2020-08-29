@@ -48,7 +48,7 @@ yarn run build
 ## Project structure
 - **app/** - source files
 - **dist/** - build files
-- **build/** - gziped templates to use in "Generation Tree" application
+- **build/** - zipped templates to use in "Generation Tree" application
 - **gulp-tasks/** - tasks for gulp task runner
 - **gulpfile.babel.js** - main gulp file
 - **gulp-vars.js** - variables for gulp tasks
