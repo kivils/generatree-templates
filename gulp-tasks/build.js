@@ -54,6 +54,11 @@ function pages(cb) {
   gulp.src(gulpParams.pagesWild)
     .pipe($.inject(gulpParams.injectCss, {relative: true}))
     .pipe($.inject(gulpParams.injectJs, {relative: true}))
+    .pipe(gulp.dest('./' + gulpParams.sourcePath));
+
+  gulp.src(gulpParams.pagesWild)
+    .pipe($.inject(gulpParams.injectCss, {relative: true}))
+    .pipe($.inject(gulpParams.injectJs, {relative: true}))
 
     .pipe($.useref({base: gulpParams.buildPath}))
 
