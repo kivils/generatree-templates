@@ -850,6 +850,7 @@ table.dataTable {
 
 .portfolio-item .portfolio-details h4 {
   transition: all 0.3s ease-in-out;
+  word-break: break-word;
 }
 
 .portfolio-item .portfolio-details a span {
@@ -867,40 +868,45 @@ table.dataTable {
 
 /* Styling Next and Prev buttons */
 
-.touch-slider .owl-controls .owl-buttons div{
-  position: absolute;
-  top: 50%;
-  height: 60px;
-  line-height: 60px;
-  display: inline-block;
-  zoom: 1;
-  padding: 0 1px;
-  border-radius: 50%;
-  background: #444;
-  opacity: 0.6;
-  margin-top: -30px;
-  transition: all 0.4s ease-in-out;
-}
+.touch-slider {
+  &.owl-carousel {
+    .owl-nav button.owl-next,
+    .owl-nav button.owl-prev {
+      position: absolute;
+      top: 50%;
+      height: 60px;
+      line-height: 60px;
+      display: inline-block;
+      zoom: 1;
+      padding: 0 1px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      opacity: 0.6;
+      margin-top: -30px;
+      transition: all 0.4s ease-in-out;
+      font-size: 1.8em;
+      color: #fff;
+      width: 24px;
+    }
 
-.touch-slider:hover .owl-controls .owl-buttons div{
-  opacity: 1;
-}
+    .owl-nav button.owl-prev {
+      left: 0;
+      border-radius: 0 8px 8px 0;
+    }
 
-.touch-slider .owl-controls .owl-buttons div.owl-prev{
-  left: 0;
-  border-radius: 0 3px 3px 0;
-}
+    .owl-nav button.owl-next {
+      right: 0;
+      border-radius: 8px 0 0 8px;
+    }
+  }
 
-.touch-slider .owl-controls .owl-buttons div.owl-next{
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  &:hover {
+    .owl-nav button.owl-next,
+    .owl-nav button.owl-prev {
+      opacity: 1;
+    }
+  }
 }
-
-.touch-slider .owl-controls .owl-buttons div i{
-  font-size: 1.8em;
-  color: #fff;
-}
-
 
 .touch-carousel .owl-controls .owl-buttons {
   position: absolute;
