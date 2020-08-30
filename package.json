@@ -1,6 +1,6 @@
 {
   "name": "generatree-templates",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Template for Generation Tree",
   "main": "index.js",
   "repository": "https://github.com/kivils/generatree-templates.git",
