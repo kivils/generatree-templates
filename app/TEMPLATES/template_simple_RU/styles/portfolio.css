@@ -98,34 +98,30 @@
       left: 0;
       height: 100%;
       width: 100%;
-      color: #050F1E;
+      color: var(--color-accent);
       transition: all 0.5s;
     }
 
     .more {
       opacity:0;
       display: inline-block;
-      content: "i";
+      content: "";
       font-size: 50px;
       font-style: normal;
       font-weight: 100;
       line-height: 76px;
       position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -40px;
-      height: 80px;
-      width: 80px;
-      color: #fff;
-      background:#000;
-      border: 2px solid #fff;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: var(--color-accent);
       transition: all 0.5s;
-      transform: scale(0);
     }
 
     &:hover {
       h3 {
-        color: #FFFFFF;
+        color: var(--color-accent);
         transform: translate3d(0px, 70px, 0px);
         opacity:0;
       }
@@ -140,23 +136,7 @@
       }
 
       .more {
-        opacity:0.75;
-        top: 50%;
-        margin-top: -40px;
-        transform: scale(1);
-        border-radius:50%;
-
-        @media (min-width: 992px) {
-          top: 60%;
-          margin-top: 0;
-        }
-
-        &:hover {
-          opacity:1;
-          color: #556270;
-          border-color: #fff;
-          background:#fff;
-        }
+        opacity: 1;
       }
     }
   }

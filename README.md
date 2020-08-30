@@ -15,7 +15,7 @@ Templates for [Generation Tree](http://generatree.com/index.html)
 
 ## Gulp tasks for development
 ``
-yarn run serve
+yarn dev
 ``
 
 - Starts local server with hot-reload
