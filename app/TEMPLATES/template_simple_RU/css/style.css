@@ -2360,31 +2360,30 @@
       left: 0;
       height: 100%;
       width: 100%;
-      color: #050F1E;
+      color: #6a3da3;
+      color: var(--color-accent);
       transition: all 0.5s;
     }
 #portfolio-list li .more {
       opacity:0;
       display: inline-block;
-      content: "i";
+      content: "";
       font-size: 50px;
       font-style: normal;
       font-weight: 100;
       line-height: 76px;
       position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -40px;
-      height: 80px;
-      width: 80px;
-      color: #fff;
-      background:#000;
-      border: 2px solid #fff;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: #6a3da3;
+      color: var(--color-accent);
       transition: all 0.5s;
-      transform: scale(0);
     }
 #portfolio-list li:hover h3 {
-        color: #FFFFFF;
+        color: #6a3da3;
+        color: var(--color-accent);
         transform: translate3d(0px, 70px, 0px);
         opacity:0;
       }
@@ -2396,25 +2395,8 @@
         opacity:1;
       }
 #portfolio-list li:hover .more {
-        opacity:0.75;
-        top: 50%;
-        margin-top: -40px;
-        transform: scale(1);
-        border-radius:50%
+        opacity: 1;
       }
-@media (min-width: 992px) {
-
-      #portfolio-list li:hover .more {
-          top: 60%;
-          margin-top: 0
-      }
-        }
-#portfolio-list li:hover .more:hover {
-          opacity:1;
-          color: #556270;
-          border-color: #fff;
-          background:#fff;
-        }
 @media (min-width: 768px) {
   .portfolio-2column #portfolio-list li {
     width: 31.0%;
@@ -3285,6 +3267,7 @@ table.dataTable .dropdown-menu > li > a {
 
 .portfolio-item .portfolio-details h4 {
   transition: all 0.3s ease-in-out;
+  word-break: break-word;
 }
 
 .portfolio-item .portfolio-details a span {
@@ -3302,40 +3285,40 @@ table.dataTable .dropdown-menu > li > a {
 
 /* Styling Next and Prev buttons */
 
-.touch-slider .owl-controls .owl-buttons div{
-  position: absolute;
-  top: 50%;
-  height: 60px;
-  line-height: 60px;
-  display: inline-block;
-  zoom: 1;
-  padding: 0 1px;
-  border-radius: 50%;
-  background: #444;
-  opacity: 0.6;
-  margin-top: -30px;
-  transition: all 0.4s ease-in-out;
-}
+.touch-slider.owl-carousel .owl-nav button.owl-next,
+    .touch-slider.owl-carousel .owl-nav button.owl-prev {
+      position: absolute;
+      top: 50%;
+      height: 60px;
+      line-height: 60px;
+      display: inline-block;
+      zoom: 1;
+      padding: 0 1px;
+      border-radius: 50%;
+      background: #6a3da3;
+      background: var(--color-accent);
+      opacity: 0.6;
+      margin-top: -30px;
+      transition: all 0.4s ease-in-out;
+      font-size: 1.8em;
+      color: #fff;
+      width: 24px;
+    }
 
-.touch-slider:hover .owl-controls .owl-buttons div{
-  opacity: 1;
-}
+.touch-slider.owl-carousel .owl-nav button.owl-prev {
+      left: 0;
+      border-radius: 0 8px 8px 0;
+    }
 
-.touch-slider .owl-controls .owl-buttons div.owl-prev{
-  left: 0;
-  border-radius: 0 3px 3px 0;
-}
+.touch-slider.owl-carousel .owl-nav button.owl-next {
+      right: 0;
+      border-radius: 8px 0 0 8px;
+    }
 
-.touch-slider .owl-controls .owl-buttons div.owl-next{
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.touch-slider .owl-controls .owl-buttons div i{
-  font-size: 1.8em;
-  color: #fff;
-}
-
+.touch-slider:hover .owl-nav button.owl-next,
+    .touch-slider:hover .owl-nav button.owl-prev {
+      opacity: 1;
+    }
 
 .touch-carousel .owl-controls .owl-buttons {
   position: absolute;

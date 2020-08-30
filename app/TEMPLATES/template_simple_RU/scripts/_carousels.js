@@ -6,16 +6,40 @@ function Carousels() {
     self.init = function() {
       const $ = require('jquery');
 
+      // Documents in pages
       $(".projects-carousel").owlCarousel({
-        navigation : true,
-        pagination: false,
-        slideSpeed : 400,
-        stopOnHover: true,
-        autoPlay: 3000,
+        nav : true,
+        dots: false,
+        loop: true,
+        autoplayHoverPause: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
         items : 4,
-        itemsDesktopSmall : [900,3],
-        itemsTablet: [600,2],
-        itemsMobile : [479, 1]
+        responsive:{
+          0:{
+            items:1,
+          },
+          600:{
+            items:2,
+          },
+          992:{
+            items:3,
+          }
+        }
+      });
+
+      // Person avatar
+      $('.touch-slider').each(function(){
+        const owl = $(this);
+        owl.owlCarousel({
+          nav : true,
+          dots: false,
+          loop: true,
+          autoplayHoverPause: true,
+          autoplay: true,
+          autoplayTimeout: 3000,
+          items : 1
+        });
       });
     };
 }
